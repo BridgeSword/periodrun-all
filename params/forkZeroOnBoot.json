@@ -1,0 +1,224 @@
+{
+    "liftMotor": {
+        "value": "Lift",
+        "group": "module-lift",
+        "type": "str",
+        "default": "motor2",
+        "comment": "Fork lift motor name; None = no such axis"
+    },
+    "liftZero": {
+        "value": 0.2,
+        "group": "module-lift",
+        "type": "float",
+        "default": 0.086,
+        "maxValue": 10,
+        "minValue": 0,
+        "comment": "Lift zero position",
+        "unit": "m"
+    },
+    "liftZeroDi": {
+        "value": -1,
+        "group": "module-lift",
+        "type": "int",
+        "default": -1,
+        "maxValue": 100,
+        "minValue": -1,
+        "comment": "Lift zero limit DI; -1 = not configured (position only)"
+    },
+    "liftVel": {
+        "value": 0.1,
+        "group": "module-lift",
+        "type": "float",
+        "default": 0.1,
+        "maxValue": 0.1,
+        "minValue": 0,
+        "comment": "Lift zeroing max speed (must not exceed the motor maxSpeed in the robot model)",
+        "unit": "m/s"
+    },
+    "lift_zero_precision": {
+        "value": 0.005,
+        "group": "module-lift",
+        "type": "float",
+        "default": 0.005,
+        "maxValue": 0.1,
+        "minValue": 0.0,
+        "comment": "Lift zero position tolerance (used when there is no zero limit DI)",
+        "unit": "m"
+    },
+    "checkTaskStatus": {
+        "value": true,
+        "group": "safety",
+        "type": "bool",
+        "default": true,
+        "comment": "Skip zeroing on this boot if the dispatcher is running a task (recommended)"
+    },
+    "skipWhenCharging": {
+        "value": true,
+        "group": "safety",
+        "type": "bool",
+        "default": true,
+        "comment": "Treat charging as idle and allow zeroing on boot"
+    },
+    "blockWhenMoving": {
+        "value": true,
+        "group": "safety",
+        "type": "bool",
+        "default": true,
+        "comment": "Stop zeroing and raise an alarm if the robot starts moving during zeroing"
+    },
+    "moveSpeedThreshold": {
+        "value": 0.01,
+        "group": "safety",
+        "type": "float",
+        "default": 0.01,
+        "maxValue": 1.0,
+        "minValue": 0.0,
+        "comment": "Travel speed threshold for 'robot is moving'",
+        "unit": "m/s"
+    },
+    "zeroTimeout": {
+        "value": 20.0,
+        "group": "safety",
+        "type": "float",
+        "default": 20.0,
+        "maxValue": 600.0,
+        "minValue": 0.1,
+        "comment": "Zeroing timeout per axis",
+        "unit": "s"
+    },
+    "retryInterval": {
+        "value": 0.3,
+        "group": "safety",
+        "type": "float",
+        "default": 0.3,
+        "maxValue": 10.0,
+        "minValue": 0.0,
+        "comment": "Retry interval after timeout/failure; 0 = no retry",
+        "unit": "s"
+    },
+    "limitDiAllowCount": {
+        "value": 3,
+        "group": "safety",
+        "type": "int",
+        "default": 3,
+        "maxValue": 100,
+        "minValue": 0,
+        "comment": "Cycles the zero limit DI may stay inactive before it is treated as faulty"
+    },
+    "stretchMotor": {
+        "value": "None",
+        "group": "module-stretch",
+        "type": "str",
+        "default": "None",
+        "comment": "Fork stretch motor name; None = no such axis"
+    },
+    "stretchZero": {
+        "value": 0.02,
+        "group": "module-stretch",
+        "type": "float",
+        "default": 0.02,
+        "maxValue": 10,
+        "minValue": 0,
+        "comment": "Stretch zero position (retracted)",
+        "unit": "m"
+    },
+    "stretchZeroDi": {
+        "value": -1,
+        "group": "module-stretch",
+        "type": "int",
+        "default": -1,
+        "maxValue": 100,
+        "minValue": -1,
+        "comment": "Stretch zero limit DI; -1 = not configured (position only)"
+    },
+    "stretchVel": {
+        "value": 0.02,
+        "group": "module-stretch",
+        "type": "float",
+        "default": 0.02,
+        "maxValue": 1.5,
+        "minValue": 0,
+        "comment": "Stretch zeroing max speed",
+        "unit": "m/s"
+    },
+    "stretch_zero_precision": {
+        "value": 0.005,
+        "group": "module-stretch",
+        "type": "float",
+        "default": 0.005,
+        "maxValue": 0.1,
+        "minValue": 0.0,
+        "comment": "Stretch zero position tolerance (used when there is no zero limit DI)",
+        "unit": "m"
+    },
+    "lateral_motor": {
+        "value": "None",
+        "group": "module-lateral",
+        "type": "str",
+        "default": "None",
+        "comment": "Fork side-shift motor name; None = no such axis"
+    },
+    "lateral_zero": {
+        "value": 0.0,
+        "group": "module-lateral",
+        "type": "float",
+        "default": 0.0,
+        "maxValue": 10,
+        "minValue": -10,
+        "comment": "Side-shift zero position",
+        "unit": "m"
+    },
+    "lateral_zero_di": {
+        "value": -1,
+        "group": "module-lateral",
+        "type": "int",
+        "default": -1,
+        "maxValue": 100,
+        "minValue": -1,
+        "comment": "Side-shift zero limit DI; -1 = not configured (position only)"
+    },
+    "lateral_vel": {
+        "value": 0.0,
+        "group": "module-lateral",
+        "type": "float",
+        "default": 0.0,
+        "maxValue": 10,
+        "minValue": 0,
+        "comment": "Side-shift zeroing max speed",
+        "unit": "m/s"
+    },
+    "lateral_zero_precision": {
+        "value": 0.005,
+        "group": "module-lateral",
+        "type": "float",
+        "default": 0.005,
+        "maxValue": 0.1,
+        "minValue": 0.0,
+        "comment": "Side-shift zero position tolerance (used when there is no zero limit DI)",
+        "unit": "m"
+    },
+    "extraMotors": {
+        "value": "[]",
+        "group": "module-extra",
+        "type": "str",
+        "default": "[]",
+        "comment": "Other linear motor axes to zero (JSON string), fields: name/zero/zeroDi/vel/precision/timeout"
+    },
+    "logInterval": {
+        "value": 1.0,
+        "group": "debug",
+        "type": "float",
+        "default": 1.0,
+        "maxValue": 10.0,
+        "minValue": 0.0,
+        "comment": "Log/status report interval; 0 = every cycle",
+        "unit": "s"
+    },
+    "firstBootLogOnce": {
+        "value": true,
+        "group": "debug",
+        "type": "bool",
+        "default": true,
+        "comment": "Report boot info only once (avoid log spam)"
+    }
+}
